@@ -9,7 +9,7 @@
         .section h2 { margin-bottom: 10px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input[type="text"], input[type="email"], input[type="date"], textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        input[type="text"], input[type="email"], input[type="date"], textarea { width: calc(100% - 20px); padding: 8px; box-sizing: border-box; }
         input[type="radio"], input[type="checkbox"] { margin-right: 10px; }
         .checkbox-group label { display: inline; font-weight: normal; }
         button { padding: 10px 20px; background-color: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
@@ -22,7 +22,7 @@
             <div class="section">
                 <h2>Deel 1: Vragenlijst</h2>
                 <div class="form-group">
-                    <label>Bent u zwanger of geeft u borstvoeding?</label>
+                    <label><b>Bent u zwanger of geeft u borstvoeding?</b></label>
                     <input type="radio" name="pregnant" value="Nee"> Nee
                     <input type="radio" name="pregnant" value="Ja"> Ja
                     <div class="form-group">
@@ -30,63 +30,105 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Gebruikt u een van de onderstaande medicijnen of zalven?</label>
-                    <input type="radio" name="medication" value="Nee"> Nee
-                    <input type="radio" name="medication" value="Ja"> Ja, namelijk
-                    <input type="text" name="medicationDetails" placeholder="Naam van het medicijn">
+                    <label><b>Gebruikt u een van de onderstaande medicijnen of zalven?</b></label>
+                    <input type="radio" name="medication" value="Nee"> Nee<br>
+                    <input type="radio" name="medication" value="Ja, namelijk"> Ja, namelijk <input type="text" name="medicationDetails" placeholder="Naam van het medicijn"><br>
+                    <input type="radio" name="medication" value="Tegen acne"> Tegen acne<br>
+                    <input type="radio" name="medication" value="Kruidenpreparaten tegen somberheid, zoals St. Janskruid"> Kruidenpreparaten tegen somberheid, zoals St. Janskruid<br>
+                    <input type="radio" name="medication" value="Antibiotica of penicilline Premarin (oestrogeen hormoon tekort aanvullen)"> Antibiotica of penicilline Premarin (oestrogeen hormoon tekort aanvullen)
                 </div>
-                <!-- Add more questions as needed -->
-                <div class="section-divider"></div>
                 <div class="form-group">
-                    <label>Heeft u nu of in het verleden last gehad van?</label>
+                    <label><b>Heeft u nu of in het verleden last gehad van?</b></label>
                     <div class="checkbox-group">
                         <input type="radio" name="condition" value="Huidkanker en/of leukemie"> Huidkanker en/of leukemie<br>
                         <input type="radio" name="condition" value="Pacemaker of inwendige defibrillator"> Pacemaker of inwendige defibrillator<br>
+                        <input type="radio" name="condition" value="Bloedverdunners"> Bloedverdunners<br>
+                        <input type="radio" name="condition" value="Epilepsie"> Epilepsie<br>
+                        <input type="radio" name="condition" value="Diabetes"> Diabetes<br>
                         <input type="radio" name="condition" value="Geen van de bovenstaande"> Geen van de bovenstaande
                     </div>
                 </div>
-                <!-- Add more questions as needed -->
+                <div class="form-group">
+                    <label><b>Bent u korter dan twee weken geleden in de zon of onder de zonnebank geweest?</b></label>
+                    <input type="radio" name="sunExposure" value="Nee"> Nee
+                    <input type="radio" name="sunExposure" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Heeft u een actieve koortslip infectie op dit moment?</b></label>
+                    <input type="radio" name="coldSore" value="Nee"> Nee
+                    <input type="radio" name="coldSore" value="Ja"> Ja, u dient na genezen nog drie weken te wachten voordat u kunt beginnen.
+                </div>
+                <div class="form-group">
+                    <label><b>Behandelgebied:</b></label>
+                    <input type="text" name="treatmentArea" placeholder="Omschrijf het behandelgebied">
+                </div>
             </div>
+
             <div class="section">
                 <h2>Deel 2: Toestemmingsformulier</h2>
                 <div class="form-group">
-                    <label>Naam:</label>
+                    <label><b>Naam:</b></label>
                     <input type="text" name="name">
                 </div>
                 <div class="form-group">
-                    <label>Adres:</label>
+                    <label><b>Adres:</b></label>
                     <input type="text" name="address">
                 </div>
                 <div class="form-group">
-                    <label>Telefoonnummer:</label>
+                    <label><b>Telefoonnummer:</b></label>
                     <input type="text" name="phone">
                 </div>
                 <div class="form-group">
-                    <label>E-mail:</label>
+                    <label><b>E-mail:</b></label>
                     <input type="email" name="email">
                 </div>
                 <div class="form-group">
-                    <label>Datum intakegesprek:</label>
+                    <label><b>Datum intakegesprek:</b></label>
                     <input type="date" name="intakeDate">
                 </div>
                 <div class="form-group">
-                    <label>Behandelend specialist:</label>
+                    <label><b>Behandelend specialist:</b></label>
                     <input type="text" name="specialist">
                 </div>
-                <!-- Add more fields as needed -->
                 <div class="section-divider"></div>
                 <div class="form-group">
-                    <label>Complicaties en risicobehandeling:</label>
+                    <label><b>Ik heb voorlichting gehad en begrijp de risico's:</b></label>
+                    <input type="checkbox" name="understandRisks" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Ik heb mijn arts geïnformeerd over mijn medicijngebruik:</b></label>
+                    <input type="checkbox" name="informedMedicationUse" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Complicaties en risicobehandeling:</b></label>
                     <textarea name="complications" rows="4" placeholder="Bespreek hier complicaties en risicobehandeling"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Behandelduur:</label>
+                    <label><b>Behandelduur:</b></label>
                     <input type="text" name="treatmentDuration">
                 </div>
                 <div class="form-group">
-                    <label>Ik geef toestemming om mijn foto's te gebruiken op social media:</label>
+                    <label><b>Ik geef toestemming om mijn foto's te gebruiken op social media:</b></label>
                     <input type="radio" name="socialMediaConsent" value="Ja"> Ja
                     <input type="radio" name="socialMediaConsent" value="Nee"> Nee
+                </div>
+                <div class="section-divider"></div>
+                <h3>Verklaart hierbij het volgende:</h3>
+                <div class="form-group">
+                    <label><b>Ik begrijp dat de behandeling meerdere sessies kan vereisen:</b></label>
+                    <input type="checkbox" name="multipleSessions" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Ik begrijp dat ik mijn huid goed moet verzorgen na de behandeling:</b></label>
+                    <input type="checkbox" name="skinCare" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Ik begrijp dat er mogelijkheid is tot het melden van complicaties na de behandeling:</b></label>
+                    <input type="checkbox" name="complicationReporting" value="Ja"> Ja
+                </div>
+                <div class="form-group">
+                    <label><b>Ik heb naar waarheid bovenstaande vragen beantwoord en geef toestemming voor het uitvoeren van de behandeling:</b></label>
+                    <input type="checkbox" name="truthfulAnswers" value="Ja"> Ja
                 </div>
             </div>
             <button type="button" onclick="generatePDF()">Genereer PDF</button>
@@ -99,59 +141,113 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            // Define styles and constants
+            const formData = new FormData(document.getElementById('questionnaireForm'));
+
+            let y = 20;
             const margin = 10;
-            let yPosition = 20;
             const lineHeight = 10;
             const lineSpacing = 5;
+            const pageHeight = doc.internal.pageSize.height;
+
+            doc.setFontSize(16);
+            doc.setFont("helvetica", "bold");
+            doc.text("Deel 1: Vragenlijst", margin, y);
+            y += lineHeight + lineSpacing;
 
             doc.setFontSize(12);
-            doc.text("Deel 1: Vragenlijst", margin, yPosition);
-            yPosition += lineHeight + lineSpacing;
+            doc.setFont("helvetica", "normal");
 
-            const form = document.getElementById('questionnaireForm');
-            const formData = new FormData(form);
+            const questions = [
+                { label: "Bent u zwanger of geeft u borstvoeding?", name: "pregnant" },
+                { label: "Gebruikt u een van de onderstaande medicijnen of zalven?", name: "medication" },
+                { label: "Heeft u nu of in het verleden last gehad van?", name: "condition" },
+                { label: "Bent u korter dan twee weken geleden in de zon of onder de zonnebank geweest?", name: "sunExposure" },
+                { label: "Heeft u een actieve koortslip infectie op dit moment?", name: "coldSore" },
+                { label: "Behandelgebied:", name: "treatmentArea" }
+            ];
 
-            formData.forEach((value, key) => {
-                if (value) {
-                    if (key.includes("pregnant") || key.includes("medication") || key.includes("condition")) {
-                        doc.text(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}:`, margin, yPosition);
-                        doc.rect(120, yPosition - 8, 6, 6); // Checkbox or radio-like box
-                        if (value === "Ja" || value === "Nee") {
-                            doc.text(value, 130, yPosition);
-                        } else {
-                            doc.text(value, 140, yPosition);
-                        }
-                    } else {
-                        doc.text(`${key}: ${value}`, margin, yPosition);
+            questions.forEach(question => {
+                const answer = formData.get(question.name);
+                const textHeight = doc.getTextDimensions(answer || "Geen antwoord").h;
+
+                if (y + textHeight + lineSpacing > pageHeight - margin) {
+                    doc.addPage();
+                    y = margin;
+                }
+
+                doc.setFont("helvetica", "bold");
+                doc.text(`${question.label}`, margin, y);
+                doc.setFont("helvetica", "normal");
+                y += lineHeight + lineSpacing;
+                doc.text(`${answer || "Geen antwoord"}`, margin, y);
+                y += textHeight + lineSpacing;
+
+                if (question.name === "medication" && answer === "Ja, namelijk") {
+                    const medicationDetails = formData.get("medicationDetails") || "Geen details ingevuld";
+                    const medicationDetailsHeight = doc.getTextDimensions(medicationDetails).h;
+
+                    if (y + medicationDetailsHeight + lineSpacing > pageHeight - margin) {
+                        doc.addPage();
+                        y = margin;
                     }
-                    yPosition += lineHeight;
+
+                    doc.setFont("helvetica", "bold");
+                    doc.text("Medicijn Details:", margin + 10, y);
+                    doc.setFont("helvetica", "normal");
+                    y += lineHeight + lineSpacing;
+                    doc.text(`${medicationDetails}`, margin + 20, y);
+                    y += medicationDetailsHeight + lineSpacing;
                 }
             });
 
-            doc.addPage();
-            yPosition = margin;
-            doc.text("Deel 2: Toestemmingsformulier", margin, yPosition);
-            yPosition += lineHeight + lineSpacing;
+            // Add page break before starting Deel 2 if necessary
+            if (y + lineHeight + lineSpacing > pageHeight - margin) {
+                doc.addPage();
+                y = margin;
+            } else {
+                y += lineHeight + lineSpacing; // Add some space before starting Deel 2
+            }
 
-            formData.forEach((value, key) => {
-                if (value) {
-                    if (key.includes("name") || key.includes("address") || key.includes("phone") || key.includes("email") || key.includes("intakeDate") || key.includes("specialist") || key.includes("complications") || key.includes("treatmentDuration") || key.includes("socialMediaConsent")) {
-                        doc.text(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}:`, margin, yPosition);
-                        doc.rect(120, yPosition - 8, 6, 6); // Checkbox or radio-like box
-                        if (value === "Ja" || value === "Nee") {
-                            doc.text(value, 130, yPosition);
-                        } else {
-                            doc.text(value, 140, yPosition);
-                        }
-                    } else {
-                        doc.text(`${key}: ${value}`, margin, yPosition);
-                    }
-                    yPosition += lineHeight;
+            doc.setFontSize(16);
+            doc.setFont("helvetica", "bold");
+            doc.text("Deel 2: Toestemmingsformulier", margin, y);
+            y += lineHeight + lineSpacing;
+
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "normal");
+
+            const consentFields = [
+                { label: "Naam:", name: "name" },
+                { label: "Adres:", name: "address" },
+                { label: "Telefoonnummer:", name: "phone" },
+                { label: "E-mail:", name: "email" },
+                { label: "Datum intakegesprek:", name: "intakeDate" },
+                { label: "Behandelend specialist:", name: "specialist" },
+                { label: "Ik heb voorlichting gehad en begrijp de risico's:", name: "understandRisks" },
+                { label: "Ik heb mijn arts geïnformeerd over mijn medicijngebruik:", name: "informedMedicationUse" },
+                { label: "Complicaties en risicobehandeling:", name: "complications" },
+                { label: "Behandelduur:", name: "treatmentDuration" },
+                { label: "Ik geef toestemming om mijn foto's te gebruiken op social media:", name: "socialMediaConsent" }
+            ];
+
+            consentFields.forEach(field => {
+                const value = formData.get(field.name) || "Geen antwoord";
+                const textHeight = doc.getTextDimensions(value).h;
+
+                if (y + textHeight + lineSpacing > pageHeight - margin) {
+                    doc.addPage();
+                    y = margin;
                 }
+
+                doc.setFont("helvetica", "bold");
+                doc.text(`${field.label}`, margin, y);
+                doc.setFont("helvetica", "normal");
+                y += lineHeight + lineSpacing;
+                doc.text(`${value}`, margin, y);
+                y += textHeight + lineSpacing;
             });
 
-            doc.save("form.pdf");
+            doc.save('form.pdf');
         }
     </script>
 </body>
